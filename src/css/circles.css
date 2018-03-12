@@ -26,20 +26,33 @@ canvas {
 }
 
 .intro-messages__message {
+	background: rgb(103, 67, 131);
+	color: white;
+	font-family: 'Assistant', sans-serif;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 300px;
 	width: 500px;
 	border-radius: 200px;
-	font-size: 2em;
+	font-size: 1.75em;
 	padding: 0;
 	border: none;
 	clip-path: inset(30px 0px 30px 0px);
 }
 
-.intro-messages__message-content--centered {
-	text-align: center;
+.intro-messages__message::after {
+	content: '';
+	position: absolute;
+	height: 230px;
+	width: 475px;
+	border-top: 10px solid white;
+	border-bottom: 10px solid white;
+	border-radius: 50px;
+}
+
+.intro-messages__message--hidden {
+	visibility: hidden;
 }
 
 .intro-messages__message--pop-in {
@@ -57,6 +70,20 @@ canvas {
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: both;
 	animation-direction: alternate;
+}
+
+.intro-messages__message--pop-out {
+	animation-name: pop-in;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+	animation-direction: reverse;
+}
+
+.intro-messages__message-content {
+	width: 85%;
+	text-align: center;
 }
 
 @keyframes pop-in {

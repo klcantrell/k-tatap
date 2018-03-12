@@ -5,10 +5,24 @@
 	<link rel="stylesheet" type="text/css" href="circles.css">
 </head>
 <body>
+	<link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+
 	<section class="intro-messages" id="intro-messages">
-		<dialog open class="intro-messages__message js_intro-messages__first-message intro-messages__message--pop-in">
-			<span class="intro-messages__message-content--centered">
-				Hello, there!  This experience requires a keyboard and that your sound is on.
+		<dialog class="intro-messages__message js_intro-messages__first-message">
+			<span class="intro-messages__message-content">
+				Hello, there!  This experience requires a keyboard and that your sound is on. <br> <br>
+				Go ahead, press any QWERTY key.  You know you want to...
+			</span>
+		</dialog>
+		<dialog class="intro-messages__message js_intro-messages__second-message intro-messages__message--hidden">
+			<span class="intro-messages__message-content">
+				Whoa, that was fun! <br> <br>
+				Go ahead, do it again...
+			</span>
+		</dialog>
+		<dialog class="intro-messages__message js_intro-messages__third-message intro-messages__message--hidden">
+			<span class="intro-messages__message-content">
+				Awesome!  Have at it.  See if you can make a beat.
 			</span>
 		</dialog>
 	</section>

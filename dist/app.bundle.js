@@ -83,146 +83,264 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 window.addEventListener('DOMContentLoaded', function () {
-  var keyData = {
-    q: {
-      sound: new Audio(__webpack_require__(6)),
-      color: '#1abc9c'
-    },
-    w: {
-      sound: new Audio(__webpack_require__(7)),
-      color: '#2ecc71'
-    },
-    e: {
-      sound: new Audio(__webpack_require__(8)),
-      color: '#3498db'
-    },
-    r: {
-      sound: new Audio(__webpack_require__(9)),
-      color: '#9b59b6'
-    },
-    t: {
-      sound: new Audio(__webpack_require__(10)),
-      color: '#34495e'
-    },
-    y: {
-      sound: new Audio(__webpack_require__(11)),
-      color: '#16a085'
-    },
-    u: {
-      sound: new Audio(__webpack_require__(12)),
-      color: '#27ae60'
-    },
-    i: {
-      sound: new Audio(__webpack_require__(13)),
-      color: '#2980b9'
-    },
-    o: {
-      sound: new Audio(__webpack_require__(14)),
-      color: '#8e44ad'
-    },
-    p: {
-      sound: new Audio(__webpack_require__(0)),
-      color: '#2c3e50'
-    },
-    a: {
-      sound: new Audio(__webpack_require__(15)),
-      color: '#f1c40f'
-    },
-    s: {
-      sound: new Audio(__webpack_require__(16)),
-      color: '#e67e22'
-    },
-    d: {
-      sound: new Audio(__webpack_require__(17)),
-      color: '#e74c3c'
-    },
-    f: {
-      sound: new Audio(__webpack_require__(18)),
-      color: '#95a5a6'
-    },
-    g: {
-      sound: new Audio(__webpack_require__(19)),
-      color: '#f39c12'
-    },
-    h: {
-      sound: new Audio(__webpack_require__(20)),
-      color: '#d35400'
-    },
-    j: {
-      sound: new Audio(__webpack_require__(21)),
-      color: '#1abc9c'
-    },
-    k: {
-      sound: new Audio(__webpack_require__(22)),
-      color: '#2ecc71'
-    },
-    l: {
-      sound: new Audio(__webpack_require__(23)),
-      color: '#3498db'
-    },
-    z: {
-      sound: new Audio(__webpack_require__(24)),
-      color: '#9b59b6'
-    },
-    x: {
-      sound: new Audio(__webpack_require__(25)),
-      color: '#34495e'
-    },
-    c: {
-      sound: new Audio(__webpack_require__(26)),
-      color: '#16a085'
-    },
-    v: {
-      sound: new Audio(__webpack_require__(27)),
-      color: '#27ae60'
-    },
-    b: {
-      sound: new Audio(__webpack_require__(28)),
-      color: '#2980b9'
-    },
-    n: {
-      sound: new Audio(__webpack_require__(29)),
-      color: '#8e44ad'
-    },
-    m: {
-      sound: new Audio(__webpack_require__(0)),
-      color: '#2c3e50'
-    }
-  };
+  function IntroMessages() {
+    var rootEl = document.getElementById('intro-messages'),
+        firstDialog = rootEl.querySelector('.js_intro-messages__first-message'),
+        secondDialog = rootEl.querySelector('.js_intro-messages__second-message'),
+        thirdDialog = rootEl.querySelector('.js_intro-messages__third-message');
 
-  var canvas = document.getElementById('myCanvas'),
-      circles = [];
-
-  __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.setup(canvas);
-
-  __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.onKeyDown = function () {
-    var maxPoint = new __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.Point(__WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.size.width, __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.size.height);
-    var randomPoint = __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.Point.random();
-    var point = maxPoint.multiply(randomPoint);
-    var newCircle = new __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.Path.Circle(point, 200);
-    if (keyData[event.key]) {
-      newCircle.fillColor = keyData[event.key].color;
-      keyData[event.key].sound.load();
-      keyData[event.key].sound.play();
-    } else {
-      newCircle.fillColor = "yellow";
-      keyData['d'].sound.load();
-      keyData['d'].sound.play();
-    }
-    circles.push(newCircle);
-  };
-
-  __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.onFrame = function () {
-    for (var i = 0; i < circles.length; i++) {
-      circles[i].fillColor.hue += 1;
-      circles[i].scale(.9);
-      if (circles[i].area < 1) {
-        circles[i].remove();
-        circles.splice(i, 1);
-        i--;
+    function showDialog(el) {
+      if (el.classList.contains('intro-messages__message--hidden')) {
+        el.classList.remove('intro-messages__message--hidden');
       }
+      popInDialog(el).then(function () {
+        slowRotateDialog(el);
+      });
     }
-  };
+
+    function hideDialog(el) {
+      return new Promise(function (resolve) {
+        el.classList.remove('intro-messages__message--slow-rotate');
+        popOutDialog(el).then(function () {
+          el.classList.add('intro-messages__message--hidden');
+          setTimeout(function () {
+            resolve();
+          }, 400);
+        });
+      });
+    }
+
+    function popInDialog(el) {
+      return new Promise(function (resolve) {
+        el.classList.add('intro-messages__message--pop-in');
+        patatap.play('k');
+        setTimeout(function () {
+          resolve();
+        }, 1000);
+      });
+    }
+
+    function popOutDialog(el) {
+      return new Promise(function (resolve) {
+        el.classList.add('intro-messages__message--pop-out');
+        setTimeout(function () {
+          resolve();
+        }, 1000);
+      });
+    }
+
+    function slowRotateDialog(el) {
+      el.classList.add('intro-messages__message--slow-rotate');
+    }
+
+    function whenUserResponds(responseCount) {
+      return new Promise(function (resolve) {
+        switch (responseCount) {
+          case 0:
+            window.addEventListener('keyup', function userResponse() {
+              hideDialog(firstDialog).then(function () {
+                showDialog(secondDialog);
+              });
+              resolve(1);
+              window.removeEventListener('keyup', userResponse);
+            });
+            break;
+          case 1:
+            window.addEventListener('keyup', function userResponse() {
+              hideDialog(secondDialog).then(function () {
+                showDialog(thirdDialog);
+              });
+              resolve(2);
+              window.removeEventListener('keyup', userResponse);
+            });
+            break;
+          case 2:
+            window.addEventListener('keyup', function userResponse() {
+              hideDialog(thirdDialog);
+              resolve(3);
+              window.removeEventListener('keyup', userResponse);
+            });
+            break;
+        }
+      });
+    }
+
+    function userResponseLoop() {
+      var responseCount = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+      whenUserResponds(responseCount).then(function (newCount) {
+        if (newCount == 3) {
+          return;
+        } else {
+          userResponseLoop(newCount);
+        }
+      });
+    }
+
+    return {
+      init: function init() {
+        showDialog(firstDialog);
+        userResponseLoop();
+      }
+    };
+  }
+
+  function Patatap() {
+    var keyData = {
+      q: {
+        sound: new Audio(__webpack_require__(6)),
+        color: '#1abc9c'
+      },
+      w: {
+        sound: new Audio(__webpack_require__(7)),
+        color: '#2ecc71'
+      },
+      e: {
+        sound: new Audio(__webpack_require__(8)),
+        color: '#3498db'
+      },
+      r: {
+        sound: new Audio(__webpack_require__(9)),
+        color: '#9b59b6'
+      },
+      t: {
+        sound: new Audio(__webpack_require__(10)),
+        color: '#34495e'
+      },
+      y: {
+        sound: new Audio(__webpack_require__(11)),
+        color: '#16a085'
+      },
+      u: {
+        sound: new Audio(__webpack_require__(12)),
+        color: '#27ae60'
+      },
+      i: {
+        sound: new Audio(__webpack_require__(13)),
+        color: '#2980b9'
+      },
+      o: {
+        sound: new Audio(__webpack_require__(14)),
+        color: '#8e44ad'
+      },
+      p: {
+        sound: new Audio(__webpack_require__(0)),
+        color: '#2c3e50'
+      },
+      a: {
+        sound: new Audio(__webpack_require__(15)),
+        color: '#f1c40f'
+      },
+      s: {
+        sound: new Audio(__webpack_require__(16)),
+        color: '#e67e22'
+      },
+      d: {
+        sound: new Audio(__webpack_require__(17)),
+        color: '#e74c3c'
+      },
+      f: {
+        sound: new Audio(__webpack_require__(18)),
+        color: '#95a5a6'
+      },
+      g: {
+        sound: new Audio(__webpack_require__(19)),
+        color: '#f39c12'
+      },
+      h: {
+        sound: new Audio(__webpack_require__(20)),
+        color: '#d35400'
+      },
+      j: {
+        sound: new Audio(__webpack_require__(21)),
+        color: '#1abc9c'
+      },
+      k: {
+        sound: new Audio(__webpack_require__(22)),
+        color: '#2ecc71'
+      },
+      l: {
+        sound: new Audio(__webpack_require__(23)),
+        color: '#3498db'
+      },
+      z: {
+        sound: new Audio(__webpack_require__(24)),
+        color: '#9b59b6'
+      },
+      x: {
+        sound: new Audio(__webpack_require__(25)),
+        color: '#34495e'
+      },
+      c: {
+        sound: new Audio(__webpack_require__(26)),
+        color: '#16a085'
+      },
+      v: {
+        sound: new Audio(__webpack_require__(27)),
+        color: '#27ae60'
+      },
+      b: {
+        sound: new Audio(__webpack_require__(28)),
+        color: '#2980b9'
+      },
+      n: {
+        sound: new Audio(__webpack_require__(29)),
+        color: '#8e44ad'
+      },
+      m: {
+        sound: new Audio(__webpack_require__(0)),
+        color: '#2c3e50'
+      }
+    };
+
+    var canvas = document.getElementById('myCanvas'),
+        circles = [];
+
+    return {
+      init: function init() {
+        __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.setup(canvas);
+
+        __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.onKeyDown = function (event) {
+          var maxPoint = new __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.Point(__WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.size.width, __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.size.height);
+          var randomPoint = __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.Point.random();
+          var point = maxPoint.multiply(randomPoint);
+          var newCircle = new __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.Path.Circle(point, 200);
+          if (keyData[event.key]) {
+            newCircle.fillColor = keyData[event.key].color;
+            keyData[event.key].sound.load();
+            keyData[event.key].sound.play();
+          } else {
+            newCircle.fillColor = "yellow";
+            keyData['d'].sound.load();
+            keyData['d'].sound.play();
+          }
+          circles.push(newCircle);
+        };
+
+        __WEBPACK_IMPORTED_MODULE_0_paper_dist_paper_core_min___default.a.view.onFrame = function () {
+          for (var i = 0; i < circles.length; i++) {
+            circles[i].fillColor.hue += 1;
+            circles[i].scale(.9);
+            if (circles[i].area < 1) {
+              circles[i].remove();
+              circles.splice(i, 1);
+              i--;
+            }
+          }
+        };
+      },
+      play: function play(key) {
+        keyData[key].sound.load();
+        keyData[key].sound.play();
+      }
+    };
+  }
+
+  var introMessages = IntroMessages(),
+      patatap = Patatap();
+
+  introMessages.init();
+  patatap.init();
 });
 
 /***/ }),
