@@ -1,10 +1,111 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100vh;
+	overflow-y: hidden;
+	margin: 0;
+}
+
 canvas {
 	width: 100%;
 	height: 100%;
 	background: black;
 }
 
-html, body {
-	height: 100%;
-	margin: 0;
+.intro-messages {
+	position: absolute;
+	background: transparent;
+	height: 50%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 500px;
+}
+
+.intro-messages__message {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300px;
+	width: 500px;
+	border-radius: 200px;
+	font-size: 2em;
+	padding: 0;
+	border: none;
+	clip-path: inset(30px 0px 30px 0px);
+}
+
+.intro-messages__message-content--centered {
+	text-align: center;
+}
+
+.intro-messages__message--pop-in {
+	animation-name: pop-in;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+}
+
+.intro-messages__message--slow-rotate {
+	animation-name: slow-rotate;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+	animation-direction: alternate;
+}
+
+@keyframes pop-in {
+  0% {
+		clip-path: inset(50px 250px 50px 250px);
+		transform: scale(1, 1);
+  }
+
+  30% {
+		clip-path: inset(0px 0px 0px 0px);
+    transform: scale(1.25, 0.75);
+  }
+
+  40% {
+		clip-path: inset(30px 0px 30px 0px);
+    transform: scale(0.75, 1.25);
+  }
+
+  50% {
+		clip-path: inset(30px 0px 30px 0px);
+    transform: scale(1.15, 0.85);
+  }
+
+  65% {
+		clip-path: inset(30px 0px 30px 0px);
+    transform: scale(0.95, 1.05);
+  }
+
+  75% {
+		clip-path: inset(30px 0px 30px 0px);
+    transform: scale(1.05, 0.95);
+  }
+
+  100% {
+		clip-path: inset(30px 0px 30px 0px);
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes slow-rotate {
+	from {
+		transform: rotateY(0) rotateZ(0);
+	}
+
+	50% {
+		transform: rotateY(20deg) rotateZ(5deg);
+	}
+
+	to {
+		transform: rotateY(-5deg) rotateZ(-10deg);
+	}
 }

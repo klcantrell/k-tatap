@@ -9,6 +9,10 @@ module.exports = {
 		path: path.join(__dirname, 'dist'),
 		filename: "[name].bundle.js"
 	},
+  devServer: {
+    stats: "errors-only",
+    open: true
+  },
 	module: {
     rules: [
 			{
