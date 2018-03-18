@@ -1,5 +1,6 @@
 const path = require('path'),
-      HtmlWebpackPlugin = require('html-webpack-plugin');
+      HtmlWebpackPlugin = require('html-webpack-plugin'),
+      CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
 	entry: {
@@ -9,10 +10,6 @@ module.exports = {
 		path: path.join(__dirname, 'dist'),
 		filename: "[name].bundle.js"
 	},
-  devServer: {
-    stats: "errors-only",
-    open: true
-  },
 	module: {
     rules: [
 			{
@@ -52,7 +49,20 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: 'sounds/[name].mp3'
+            name: '[name].mp3',
+            outputPath: 'sounds/',
+            publicPath: 'https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds'
+          }
+        }
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+            publicPath: 'https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/fonts'
           }
         }
       }
@@ -61,6 +71,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html'
+    }),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.ttf$/,
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: true
     })
   ]
 }

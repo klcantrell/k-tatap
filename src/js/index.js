@@ -1,6 +1,6 @@
 import IntroMessages from './introMessages';
 import Patatap from './patatap';
-import '../css/circles.css';
+import '../css/main.css';
 
 
 const patatap = Patatap(),

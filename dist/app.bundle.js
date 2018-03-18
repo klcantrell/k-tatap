@@ -65,9 +65,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/moon.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/moon.mp3";
 
 /***/ }),
 /* 1 */
@@ -77,8 +77,8 @@ module.exports = __webpack_require__.p + "sounds/moon.mp3";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__introMessages__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__patatap__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_circles_css__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_circles_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__css_circles_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_main_css__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__css_main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__css_main_css__);
 
 
 
@@ -25214,153 +25214,153 @@ module.exports = g;
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/bubbles.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/bubbles.mp3";
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/clay.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/clay.mp3";
 
 /***/ }),
 /* 12 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/confetti.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/confetti.mp3";
 
 /***/ }),
 /* 13 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/corona.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/corona.mp3";
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/dotted-spiral.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/dotted-spiral.mp3";
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/flash-1.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/flash-1.mp3";
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/flash-2.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/flash-2.mp3";
 
 /***/ }),
 /* 17 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/flash-3.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/flash-3.mp3";
 
 /***/ }),
 /* 18 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/glimmer.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/glimmer.mp3";
 
 /***/ }),
 /* 19 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/pinwheel.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/pinwheel.mp3";
 
 /***/ }),
 /* 20 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/piston-1.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/piston-1.mp3";
 
 /***/ }),
 /* 21 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/piston-2.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/piston-2.mp3";
 
 /***/ }),
 /* 22 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/prism-1.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/prism-1.mp3";
 
 /***/ }),
 /* 23 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/prism-2.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/prism-2.mp3";
 
 /***/ }),
 /* 24 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/prism-3.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/prism-3.mp3";
 
 /***/ }),
 /* 25 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/splits.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/splits.mp3";
 
 /***/ }),
 /* 26 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/squiggle.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/squiggle.mp3";
 
 /***/ }),
 /* 27 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/strike.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/strike.mp3";
 
 /***/ }),
 /* 28 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/suspension.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/suspension.mp3";
 
 /***/ }),
 /* 29 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/timer.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/timer.mp3";
 
 /***/ }),
 /* 30 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/ufo.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/ufo.mp3";
 
 /***/ }),
 /* 31 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/veil.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/veil.mp3";
 
 /***/ }),
 /* 32 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/wipe.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/wipe.mp3";
 
 /***/ }),
 /* 33 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "sounds/zig-zag.mp3";
+module.exports = "https://s3.us-east-2.amazonaws.com/kals-portfolio-assets/patatap/sounds/zig-zag.mp3";
 
 /***/ }),
 /* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "circles.css";
+module.exports = __webpack_require__.p + "main.css";
 
 /***/ })
 /******/ ]);

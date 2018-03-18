@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Assistant';
+  src: url('../fonts/Assistant-Regular.ttf') format('truetype');
+}
+
 * {
 	box-sizing: border-box;
 }
