@@ -31,7 +31,7 @@ canvas {
 }
 
 .intro-messages__message {
-	background: rgb(103, 67, 131);
+	background: rgb(58, 73, 73);
 	color: white;
 	font-family: 'Assistant', sans-serif;
 	display: flex;
