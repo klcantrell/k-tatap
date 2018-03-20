@@ -8,21 +8,21 @@ export default function IntroMessages(patatap) {
         thirdDialog = rootEl.querySelector('.js_intro-messages__third-message');
 
   function showDialog(el) {
-    if (el.classList.contains('intro-messages__message--hidden')) {
-      el.classList.remove('intro-messages__message--hidden');
+    if (el.parentElement.classList.contains('intro-messages__message--hidden')) {
+      el.parentElement.classList.remove('intro-messages__message--hidden');
     }
     popInDialog(el)
       .then(() => {
-        slowRotateDialog(el);
+        slowRotateDialog(el.parentElement);
       })
   }
 
   function hideDialog(el) {
     return new Promise((resolve) => {
-      el.classList.remove('intro-messages__message--slow-rotate');
+      el.parentElement.classList.remove('intro-messages__message--slow-rotate');
       popOutDialog(el)
         .then(() => {
-          el.classList.add('intro-messages__message--hidden');
+          el.parentElement.classList.add('intro-messages__message--hidden');
           setTimeout(() => {
             resolve();
           }, 400);
@@ -42,6 +42,7 @@ export default function IntroMessages(patatap) {
 
   function popOutDialog(el) {
     return new Promise((resolve) => {
+      el.classList.remove('intro-messages__message--pop-in')
       el.classList.add('intro-messages__message--pop-out')
       setTimeout(() => {
         resolve();
