@@ -1,5 +1,5 @@
-import paper from 'paper';
-import { Howl, Howler } from 'howler';
+import paper from 'paper/dist/paper-core.min';
+import { Howl, Howler } from 'howler/dist/howler.core.min';
 
 export default function Patatap() {
 
@@ -204,5 +204,5 @@ export default function Patatap() {
       keyData[key].sound.play();
     }
   }
-  
+
 }
