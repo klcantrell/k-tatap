@@ -176,11 +176,9 @@ export default function Patatap() {
         const newCircle = new paper.Path.Circle(point, 200);
         if (keyData[event.key]) {
           newCircle.fillColor = keyData[event.key].color;
-          keyData[event.key].sound.load();
           keyData[event.key].sound.play();
         } else {
           newCircle.fillColor = "yellow";
-          keyData['d'].sound.load();
           keyData['d'].sound.play();
         }
         circles.push(newCircle);
@@ -200,7 +198,6 @@ export default function Patatap() {
     },
 
     play(key) {
-      keyData[key].sound.load();
       keyData[key].sound.play();
     }
   }
