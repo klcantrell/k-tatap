@@ -1,5 +1,3 @@
-import 'core-js/es6/promise';
-
 export default function IntroMessages(patatap) {
 
   const rootEl = document.getElementById('intro-messages'),
